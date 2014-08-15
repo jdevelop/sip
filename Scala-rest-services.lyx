@@ -48,6 +48,20 @@
 \usepackage{pgf}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+    \href{https://github.com/jdevelop/sip}{github://jdevelop/sip}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
 \setbeamertemplate{navigation symbols}{} %no nav symbols
 
 % ---------------
@@ -145,8 +159,7 @@ hspace{2em}
 \backslash
 insertframenumber/
 \backslash
-inserttotalframenumber]{Scala in practice.
- URL TO GITHUB!!!!}
+inserttotalframenumber]{Scala in practice.}
 \end_layout
 
 \begin_layout Plain Layout
