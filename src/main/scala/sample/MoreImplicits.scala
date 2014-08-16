@@ -1,4 +1,7 @@
 package sample
+
+import scala.annotation.implicitNotFound
+
 object MoreImplicits extends App {
   trait mayAdd[T] {
     def +!(src: T): T
@@ -16,8 +19,8 @@ object MoreImplicits extends App {
   println(1 +! 2 +! 3); println("aaa" +! "bbb")
 
   type strFunc = (String) => myString
-  def doSomethingWith(str: String)(implicit f: strFunc) = f(str.reverse)
-
+  @implicitNotFound("You should make (YourType) => myString available")
+  def doSomethingWith(str: String)(implicit f: strFunc) = f(str.reverse);
   {
     implicit def upperCase : strFunc = x => myString(x.toUpperCase)
     println(doSomethingWith("hello world").param)
