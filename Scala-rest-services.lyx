@@ -771,5 +771,66 @@ typeclass
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+defverbatim[colored]
+\backslash
+highorder{%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{src/main/scala/sample/HighOrder.scala}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+High-order functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+highorder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

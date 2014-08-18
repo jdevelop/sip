@@ -21,19 +21,19 @@ object Facebook {
   case class Photo(id: String, link: String, created_time: String)
 
   object Container {
-    implicit def ContainerCodecJaon[T: CodecJson]: CodecJson[Container[T]] = casecodec2(Container.apply[T], Container.unapply[T])("data", "paging")
+    implicit def ContainerCodecJson[T: CodecJson]: CodecJson[Container[T]] = casecodec2(Container.apply[T], Container.unapply[T])("data", "paging")
   }
 
   object Paging {
-    implicit def ContainerCodecJaon: CodecJson[Paging] = casecodec1(Paging.apply, Paging.unapply)("next")
+    implicit def ContainerCodecJson: CodecJson[Paging] = casecodec1(Paging.apply, Paging.unapply)("next")
   }
 
   object Album {
-    implicit def AlbumCodecJaon: CodecJson[Album] = casecodec3(Album.apply, Album.unapply)("id", "name", "created_time")
+    implicit def AlbumCodecJson: CodecJson[Album] = casecodec3(Album.apply, Album.unapply)("id", "name", "created_time")
   }
 
   object Photo {
-    implicit def PhotoCodecJaon: CodecJson[Photo] = casecodec3(Photo.apply, Photo.unapply)("id", "source", "created_time")
+    implicit def PhotoCodecJson: CodecJson[Photo] = casecodec3(Photo.apply, Photo.unapply)("id", "source", "created_time")
   }
 
   def retrieveImages(date: DateTime)(album: Album)(token: String): Stream[Photo] = {
