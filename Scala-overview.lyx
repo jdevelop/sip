@@ -78,10 +78,29 @@
 }
 
 \logo{\includegraphics[width=1.5cm]{Scala_logo}}
+
+\setbeamercolor{frametitle}{fg=Black,bg=white}
+\setbeamercolor{section in head/foot}{bg=Black}
+\setbeamercolor{author in head/foot}{bg=Black}
+\setbeamercolor{date in head/foot}{fg=Black}
+\setbeamercolor{block title}{fg=black}
+\setbeamercolor{sidebar}{bg=black}
+\setbeamercolor{title}{fg=black}
+
+\usefonttheme{structurebold}
+\setbeamerfont{title}{series=\bfseries,parent=structure,size=\huge,family=\ttfamily}
+\setbeamerfont{subtitle}{size=\tiny,series=\bfseries,parent=structure}
+\setbeamerfont{author}{size=\tiny,series=\bfseries,parent=structure}
+\setbeamerfont{institute}{size=\scriptsize,series=\bfseries,parent=structure}
+
+\date{}
+
+\setbeamercolor{structure}{fg=black}
 \end_preamble
+\options xcolor=dvipsnames
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language russian
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -132,7 +151,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -153,13 +172,13 @@ status open
 
 
 \backslash
-title[Scala Overview 
+title[ Scala  
 \backslash
 hspace{2em}
 \backslash
 insertframenumber/
 \backslash
-inserttotalframenumber]{Scala overview.}
+inserttotalframenumber]{Scala.}
 \end_layout
 
 \begin_layout Plain Layout
@@ -228,7 +247,7 @@ Eugene Dzhurinsky
 \end_layout
 
 \begin_layout Section
-Scala overview
+Краткий обзор #Scala
 \end_layout
 
 \begin_layout Frame
@@ -236,7 +255,7 @@ Scala overview
 status open
 
 \begin_layout Plain Layout
-Why Scala?
+Почему именно Scala?
 \end_layout
 
 \end_inset
@@ -250,7 +269,7 @@ Why Scala?
 status open
 
 \begin_layout Plain Layout
-Java but better?
+Та же Java, но в профиль?
 \end_layout
 
 \end_inset
@@ -270,9 +289,9 @@ status open
 
 \end_inset
 
-Statically typed.
- Rich type system.
- Type inference.
+Статическая типизация.
+ Богатая система типов (генерики на стероидах).
+ Вывод типов.
 \end_layout
 
 \begin_layout Itemize
@@ -286,7 +305,7 @@ status open
 
 \end_inset
 
-JVM-based.
+Тот же самый байткод.r
 \end_layout
 
 \begin_layout Itemize
@@ -300,7 +319,7 @@ status open
 
 \end_inset
 
-100% compatible with Java libraries.
+100% совместимость с любыми Java-библиотеками (обратное, впрочем, не верно).
 \end_layout
 
 \begin_layout Itemize
@@ -314,9 +333,8 @@ status open
 
 \end_inset
 
-Concise.
- Syntax sugar.
- Syntetic methods.
+Краткость - сестра таланта.
+ Синтаксический сахар.
 \end_layout
 
 \begin_layout Itemize
@@ -330,7 +348,9 @@ status open
 
 \end_inset
 
-High-order functions, closures.
+Функции высшего порядка.
+ Лямбды.
+ Замыкания.
 \end_layout
 
 \end_deeper
@@ -374,7 +394,7 @@ lstinputlisting{src/main/java/sample/Engine.java}
 status open
 
 \begin_layout Plain Layout
-Java Engine Example
+Пример типичного бина на #Java
 \end_layout
 
 \end_inset
@@ -435,7 +455,7 @@ lstinputlisting{src/main/scala/sample/SEngine.scala}
 status open
 
 \begin_layout Plain Layout
-Scala Engine Example
+Пример типичного бина на #Scala
 \end_layout
 
 \end_inset
@@ -496,8 +516,8 @@ lstinputlisting{src/main/scala/sample/ValVarExample.scala}
 status open
 
 \begin_layout Plain Layout
-Val and Var.
- Type inference and string interpolation.
+Val и Var.
+ Вывод типов и интерполяция строк.
 \end_layout
 
 \end_inset
@@ -558,7 +578,7 @@ lstinputlisting{src/main/java/sample/JValVarExample.java}
 status open
 
 \begin_layout Plain Layout
-Val and Var in Java?
+Val и Var в Java или как натянуть сову на глобус.
 \end_layout
 
 \end_inset
@@ -619,15 +639,15 @@ lstinputlisting{src/main/scala/sample/LazyTrait.scala}
 status open
 
 \begin_layout Plain Layout
-Lazy variables, traits, 
+Ленивые переменные, trait, 
 \begin_inset Quotes eld
 \end_inset
 
-generics
+генерики
 \begin_inset Quotes erd
 \end_inset
 
- and implicit conversions
+ и неявные преобразования
 \end_layout
 
 \end_inset
@@ -688,7 +708,7 @@ lstinputlisting{src/main/scala/sample/MoreImplicits.scala}
 status open
 
 \begin_layout Plain Layout
-More fun with implicits
+Имплиситы - наше все!
 \end_layout
 
 \end_inset
@@ -749,7 +769,7 @@ lstinputlisting{src/main/scala/sample/Typeclass.scala}
 status open
 
 \begin_layout Plain Layout
-Typeclasses to the rescue!
+Тайпклассы - кто здесь?
 \end_layout
 
 \end_inset
@@ -810,7 +830,7 @@ lstinputlisting{src/main/scala/sample/HighOrder.scala}
 status open
 
 \begin_layout Plain Layout
-High-order functions
+Функции высшего порядка
 \end_layout
 
 \end_inset
@@ -871,7 +891,7 @@ lstinputlisting{src/main/scala/sample/Monadz.scala}
 status open
 
 \begin_layout Plain Layout
-Monads are not scary
+Монады - это не больно!
 \end_layout
 
 \end_inset
@@ -911,6 +931,223 @@ monadz
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Section
+Приборы и материалы.
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Познавательная литература
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Scala in depth
+\series default
+ by Joshua D Suereth.
+ ISBN: 
+\series bold
+9781935182702
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Programming in Scala
+\series default
+ by Martin Odersky.
+ ISBN: 
+\series bold
+9780981531649
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Haskell: the Craft of Functional Programming
+\series default
+ by Simon Thompson, ISBN: 
+\series bold
+0201882957
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Real World Haskell
+\series default
+ by Bryan O'Sullivan, ISBN: 
+\series bold
+9780596514983
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Штуки
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maven - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{http://maven.apache.org}{http://maven.apache.org}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+SBT - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{http://scala-sbt.org}{http://scala-sbt.org}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intellij IDEA - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{http://www.jetbrains.com/idea/}{http://www.jetbrains.com/idea/}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Традиционное
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+Очень нужен программист!
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{http://animatron.com}{Animatron.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Прямые руки
+\end_layout
+
+\begin_layout Itemize
+Мозг
+\end_layout
+
+\begin_layout Itemize
+Java
+\end_layout
+
+\begin_layout Itemize
+GWT
+\end_layout
+
+\begin_layout Itemize
+Maven
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:jobs@animatron.com}{jobs@animatron.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_body
 \end_document
