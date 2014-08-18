@@ -44,6 +44,7 @@
 
 % seems to fix typewriter font in outline header:
 \usepackage{ae,aecompl}
+\usepackage{lmodern}
 
 \usepackage{pgf}
 \usepackage{graphicx}
@@ -87,15 +88,20 @@
 \setbeamercolor{sidebar}{bg=black}
 \setbeamercolor{title}{fg=black}
 
-\usefonttheme{structurebold}
-\setbeamerfont{title}{series=\bfseries,parent=structure,size=\huge,family=\ttfamily}
-\setbeamerfont{subtitle}{size=\tiny,series=\bfseries,parent=structure}
-\setbeamerfont{author}{size=\tiny,series=\bfseries,parent=structure}
-\setbeamerfont{institute}{size=\scriptsize,series=\bfseries,parent=structure}
-
 \date{}
 
 \setbeamercolor{structure}{fg=black}
+
+
+\newcommand*{\mycommentstyle}[1]{%
+  \begingroup
+    \fontseries{lc}%
+    \fontshape{it}%
+    \selectfont
+    \lstset{columns=fullflexible}%
+    #1%
+  \endgroup
+}
 \end_preamble
 \options xcolor=dvipsnames
 \use_default_options true
@@ -108,7 +114,7 @@
 \font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family default
+\font_default_family sfdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -119,7 +125,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 10
 \spacing single
 \use_hyperref false
 \papersize default
@@ -213,6 +219,8 @@ lstset{
 
 	basicstyle=
 \backslash
+ttfamily
+\backslash
 tiny,
 \end_layout
 
@@ -223,6 +231,13 @@ tiny,
 color{blue}
 \backslash
 bfseries,
+\end_layout
+
+\begin_layout Plain Layout
+
+    commentstyle=
+\backslash
+mycommentstyle,
 \end_layout
 
 \begin_layout Plain Layout
@@ -305,7 +320,7 @@ status open
 
 \end_inset
 
-Тот же самый байткод.r
+Тот же самый байткод.
 \end_layout
 
 \begin_layout Itemize
@@ -387,6 +402,10 @@ lstinputlisting{src/main/java/sample/Engine.java}
 
 \begin_layout Separator
 
+\end_layout
+
+\begin_layout Section
+Познание глубины глубин
 \end_layout
 
 \begin_layout Frame
@@ -1073,6 +1092,10 @@ href{http://www.jetbrains.com/idea/}{http://www.jetbrains.com/idea/}
 
 \end_layout
 
+\begin_layout Section
+Вместо заключения.
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1091,7 +1114,7 @@ status open
 \align center
 
 \series bold
-Очень нужен программист!
+Очень нужен программист для UI !!!
 \end_layout
 
 \begin_layout Standard
@@ -1120,11 +1143,19 @@ href{http://animatron.com}{Animatron.com}
 \end_layout
 
 \begin_layout Itemize
+Чувство прекрасного
+\end_layout
+
+\begin_layout Itemize
 Java
 \end_layout
 
 \begin_layout Itemize
 GWT
+\end_layout
+
+\begin_layout Itemize
+TDD/BDD/ATDD/WTFDD
 \end_layout
 
 \begin_layout Itemize
