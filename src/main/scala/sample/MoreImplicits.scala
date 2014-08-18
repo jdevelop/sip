@@ -1,7 +1,5 @@
 package sample
-
 import scala.annotation.implicitNotFound
-
 object MoreImplicits extends App {
   trait mayAdd[T] {
     def +!(src: T): T

@@ -227,6 +227,10 @@ ttfamily,
 Eugene Dzhurinsky
 \end_layout
 
+\begin_layout Section
+Scala overview
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -832,5 +836,85 @@ highorder
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+defverbatim[colored]
+\backslash
+monadz{%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{src/main/scala/sample/Monadz.scala}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Monads are not scary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+A monad is just a monoid in the category of endofunctors, what's the problem?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+monadz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+RESTful services.
+\end_layout
+
 \end_body
 \end_document
