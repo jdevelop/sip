@@ -153,13 +153,13 @@ status open
 
 
 \backslash
-title[Scala in practice - REST services 
+title[Scala Overview 
 \backslash
 hspace{2em}
 \backslash
 insertframenumber/
 \backslash
-inserttotalframenumber]{Scala in practice.}
+inserttotalframenumber]{Scala overview.}
 \end_layout
 
 \begin_layout Plain Layout
@@ -250,7 +250,7 @@ Why Scala?
 status open
 
 \begin_layout Plain Layout
-Better than Java
+Java but better?
 \end_layout
 
 \end_inset
@@ -912,9 +912,5 @@ monadz
 
 \end_deeper
 \end_deeper
-\begin_layout Section
-RESTful services.
-\end_layout
-
 \end_body
 \end_document
