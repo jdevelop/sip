@@ -1,4 +1,4 @@
-package sample.restful
+  package sample.restful
 
 import org.apache.commons.io.IOUtils
 import org.apache.http.client.config.RequestConfig
@@ -21,22 +21,28 @@ object Facebook {
   case class Photo(id: String, link: String, created_time: String)
 
   object Container {
-    implicit def ContainerCodecJson[T: CodecJson]: CodecJson[Container[T]] = casecodec2(Container.apply[T], Container.unapply[T])("data", "paging")
+    implicit def ContainerCodecJson[T: CodecJson]: CodecJson[Container[T]] =
+      casecodec2(Container.apply[T], Container.unapply[T])("data", "paging")
   }
 
   object Paging {
-    implicit def ContainerCodecJson: CodecJson[Paging] = casecodec1(Paging.apply, Paging.unapply)("next")
+    implicit def ContainerCodecJson: CodecJson[Paging] =
+      casecodec1(Paging.apply, Paging.unapply)("next")
   }
 
   object Album {
-    implicit def AlbumCodecJson: CodecJson[Album] = casecodec3(Album.apply, Album.unapply)("id", "name", "created_time")
+    implicit def AlbumCodecJson: CodecJson[Album] =
+      casecodec3(Album.apply, Album.unapply)("id", "name", "created_time")
   }
 
   object Photo {
-    implicit def PhotoCodecJson: CodecJson[Photo] = casecodec3(Photo.apply, Photo.unapply)("id", "source", "created_time")
+    implicit def PhotoCodecJson: CodecJson[Photo] =
+      casecodec3(Photo.apply, Photo.unapply)("id", "source", "created_time")
   }
 
-  def retrieveImages(date: DateTime)(album: Album)(token: String): Stream[Photo] = {
+  def retrieveImages(date: DateTime)
+                    (album: Album)
+                    (token: String): Stream[Photo] = {
     val timestamp = date.getMillis / 1000
     val url = s"https://graph.facebook.com/v2.1/${album.id}/photos?since=$timestamp&fields=source&access_token=$token"
     downloadAndParse[Photo](Some(url)).flatten
@@ -55,7 +61,6 @@ object Facebook {
           (lines, lines.decodeOption[Container[T]])
         } finally {
           IOUtils.closeQuietly(response)
-          None
         }
         res match {
           case (lns, None) ⇒
@@ -71,7 +76,9 @@ object Facebook {
   }
 
   def imagesStream(token: String, startDate: DateTime = new DateTime(0)) = {
-    (for (albs <- retrieveAlbums _; res <- albs.traverseU((retrieveImages(startDate) _))) yield res)(token).flatten
+    (for (albs <- retrieveAlbums _;
+          res <- albs.traverseU((retrieveImages(startDate) _))
+    ) yield res)(token).flatten
   }
 
   val cm = new PoolingHttpClientConnectionManager()

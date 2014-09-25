@@ -22,7 +22,6 @@ object Restful extends App {
     }
   }
 
-
   trait FacebookImageFetcher extends Directives {
 
     val showImages =
